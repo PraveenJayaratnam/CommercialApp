@@ -15,10 +15,31 @@ import { MyOrderComponent } from './my-order/my-order.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AuthService } from './auth.service';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, ProductComponent, ShoppingCartComponent, CheckOutComponent, OrderSuccessComponent, MyOrderComponent, AdminProductsComponent, AdminOrdersComponent, LoginComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
-  providers: [],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    ProductComponent,
+    ShoppingCartComponent,
+    CheckOutComponent,
+    OrderSuccessComponent,
+    MyOrderComponent,
+    AdminProductsComponent,
+    AdminOrdersComponent,
+    LoginComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+  ],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

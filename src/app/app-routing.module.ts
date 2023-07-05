@@ -12,6 +12,7 @@ import { MyOrderComponent } from './my-order/my-order.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'products', component: ProductComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'check-out', component: CheckOutComponent },

@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'ca-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
-
+export class LoginComponent implements OnInit {
+  constructor(private authService: AuthService) {}
+  ngOnInit(): void {}
+  login() {
+    this.authService.GoogleAuth();
+  }
 }
